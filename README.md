@@ -10,4 +10,4 @@ Learning Python in class, PyGame and TensorFlow2 outside of class
 
 ## Assignments in order
 
-- [Triple Threat](https://github.com/gdodd1/CS-470/Triple-Threat)
+- [Triple Threat](https://github.com/gdodd1/CS-470/tree/main/Triple-Threat)
