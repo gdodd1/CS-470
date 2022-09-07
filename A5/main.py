@@ -149,5 +149,5 @@ def perCountry():
     else:
         print(f'No airports in {arg}\n\n')
 
-
-main()
+if __name__ == '__main__':
+    main()
