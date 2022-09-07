@@ -17,7 +17,7 @@ passengers=[]
 # Rank,Airport,Code,Location,Country,Passengers
 
 def menu():
-    choice = int(input('Hello, please select an option from below: \n\t1. Print data\n\t2. Sort Data\n\t3. Print Specific Column\n\t4. Print Specific Row\n\t5. Quit\n\t'))
+    choice = int(input('Hello, please select an option from below: \n\t1. Print data\n\t2. Sort Data\n\t3. Print Specific Column\n\t4. Print Specific Row\n\t5. See Each Airport by Country of Choice\n\t6. Quit\n\t'))
     if choice == 1:
         printFile()
         return True
@@ -31,6 +31,9 @@ def menu():
         printRow()
         return True
     if choice == 5:
+        perCountry()
+        return True
+    else:
         return False
 
 def selectionSort(main, others):
@@ -131,5 +134,20 @@ def main():
     while x == True:
         x = menu()
     print('Goodbye')
+
+def perCountry():
+    arg = input('Which country would you like to see? ')
+    temp=[]
+    for i in range(len(airport)):
+        if country[i].capitalize() == arg.capitalize():
+            temp.append(i)
+    if len(temp) > 0:
+        print("%-50s"%'Airport', "%-5s"%'Rank ' "%-17s"%' Location', "%-20s"%'Country',  "%-3s"%'Code', "%-9s"%'Passengers')
+        print('-'*111)
+        for i in range(len(temp)):
+            print("%-50s"%airport[temp[i]], "%-5s"%rank[temp[i]], "%-17s"%location[temp[i]], "%-20s"%country[temp[i]],  "%-3s"%code[temp[i]], "%-9s"%{passengers[temp[i]]})
+    else:
+        print(f'No airports in {arg}\n\n')
+
 
 main()
